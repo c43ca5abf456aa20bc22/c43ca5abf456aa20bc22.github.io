@@ -1,0 +1,206 @@
+<!doctype html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Title</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+</head> 
+<body> 
+<input type='button' id='save_date1' value='Boursorama Hanane' />
+
+<div id="myDiv_1" style="border:1px solid">
+    <p id="parag1"></p>
+    <p id="parag1_2"></p>
+</div>
+
+<br>
+<input type='button' id='save_date2' value='HelloBank Hanane' />
+<div id="myDiv_2" style="border:1px solid">
+    <p id="parag2"></p>
+    <p id="parag2_2"></p>
+</div>
+<br>
+<input type='button' id='save_date3' value='HelloBank Abdelaziz' />
+<div id="myDiv_3" style="border:1px solid">
+    <p id="parag3"></p>
+    <p id="parag3_2"></p>
+</div>
+<br>
+<input type="checkbox" onclick="showhead()" >Mise à jour manuel
+
+<div id="myDiv_xx" style="border:1px solid">
+    <br>Mise à jour de la date de dernier payement manuellement 
+    <br><br>Numero de la carte (1,2,3):
+    <input type="number" id='nbcrd' size="5" min="1" max="3"/>
+    <br>
+    date du dernier payement
+    <input type="date" id="datecrd" min='1899-01-01' max='2022-12-13'>
+    <br>
+    <input type='button' id='update_m' value='mise à jour' />
+</div>
+
+
+<style type="text/css">
+    input#save_date1 
+    {width: 200px;
+    height: 100px;
+    background-color:#2F3F67;
+    font-family:verdana;
+    font-size:15px;
+    color: #ffffff;
+    }
+    input#save_date2
+    {width: 200px;
+    height: 100px;
+    background-color:#09C6CF;
+    color: #ffffff;
+    font-family:verdana;
+     font-size:15px;
+    }
+    input#save_date3
+    {width: 200px;
+    height: 100px;
+    background-color:#09C6CF;
+    color: #ffffff;
+    font-family:verdana;
+     font-size:15px;
+    }
+  
+</style>
+
+
+
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    update();
+    var div = document.getElementById("myDiv_xx");
+    if (div.style.display !== "none") div.style.display = "none";
+    let datenow = new Date().toISOString().slice(0,10); //return YYYY-MM-DD
+   document.getElementById("datecrd").setAttribute("max", datenow);
+});
+
+
+function update(){
+
+  let datenow = new Date();
+  
+  const read1 = localStorage.getItem('date_carte1');
+  let olddate1 = new Date(read1);
+  const diffTime1 = Math.abs(datenow - olddate1);
+  const diffs1 = Math.ceil(diffTime1 / (1000 * 60 * 60 * 24)); //days
+  //const diffs1 = Math.ceil(diffTime1 / (1000 )); //secondes
+
+  
+  const read2 = localStorage.getItem('date_carte2');
+  let olddate2 = new Date(read2);
+  const diffTime2 = Math.abs(datenow - olddate2);
+  const diffs2 = Math.ceil(diffTime2 / (1000 * 60 * 60 * 24)); 
+  //const diffs2 = Math.ceil(diffTime2 / (1000 )); 
+  
+ 
+  const read3 = localStorage.getItem('date_carte3');
+  let olddate3 = new Date(read3);
+  const diffTime3 = Math.abs(datenow - olddate3);
+  const diffs3 = Math.ceil(diffTime3 / (1000 * 60 * 60 * 24)); 
+  //const diffs3 = Math.ceil(diffTime3 / (1000 )); 
+  
+  document.getElementById('parag1_2').textContent = 'dernier payement le '+olddate1.toLocaleString();//toLocaleDateString();
+  document.getElementById('parag1').textContent = diffs1.toString() +' jours près le dernier payement';
+  
+  var element = document.getElementById("myDiv_1");
+  if (diffs1<10) element.style.backgroundColor = "#6EF599";
+  else if (diffs1<20) element.style.backgroundColor = "#F1F56E";
+  else element.style.backgroundColor = "#F56E6E";
+  
+  document.getElementById('parag2_2').textContent = 'dernier payement le '+olddate2.toLocaleString();//toLocaleDateString();
+  document.getElementById('parag2').textContent = diffs2.toString() +' jours près le dernier payement';
+  
+  var element = document.getElementById("myDiv_2");
+  if (diffs2<10) element.style.backgroundColor = "#6EF599";
+  else if (diffs2<20) element.style.backgroundColor = "#F1F56E";
+  else element.style.backgroundColor = "#F56E6E";
+  
+  document.getElementById('parag3_2').textContent = 'dernier payement le '+olddate3.toLocaleString();//toLocaleDateString();
+  document.getElementById('parag3').textContent = diffs3.toString() +' jours près le dernier payement';
+  
+  var element = document.getElementById("myDiv_3");
+  if (diffs3<10) element.style.backgroundColor = "#6EF599";
+  else if (diffs3<20) element.style.backgroundColor = "#F1F56E";
+  else element.style.backgroundColor = "#F56E6E";
+  
+}
+
+
+
+
+
+
+
+
+document.getElementById('save_date1').onclick = function() { 
+  var answer = window.confirm("Enregistrer la date de boursorama Hanane?");
+  if (answer) {
+    let date1 = new Date();
+    var txt=date1.toString();
+    localStorage.setItem('date_carte1', txt );
+    update();
+  }
+}
+
+document.getElementById('save_date2').onclick = function() { 
+  var answer = window.confirm("Enregistrer la date de Hellobank Hanane?");
+  if (answer) {
+    let date1 = new Date();
+    var txt=date1.toString();
+    localStorage.setItem('date_carte2', txt );
+    update();
+  }
+}
+
+document.getElementById('save_date3').onclick = function() { 
+  var answer = window.confirm("Enregistrer la date de Hellobank Abdelaziz?");
+  if (answer) {
+    let date1 = new Date();
+    var txt=date1.toString();
+    localStorage.setItem('date_carte3', txt );
+    update();
+  }
+}
+
+
+
+
+
+
+function showhead(){ 
+    var div = document.getElementById("myDiv_xx");
+    if (div.style.display !== "none")div.style.display = "none";
+    else div.style.display = "block";}
+
+
+
+document.getElementById('update_m' ).onclick = function() { 
+    var vardate=document.getElementById("datecrd").value;
+    var vardate2=new Date(vardate);
+
+
+    var nbcard = document.getElementById("nbcrd").value;
+  if ( nbcard>=1 & Date.parse(vardate) >1) {
+     var date_carte_='date_carte'+nbcard.toString();
+    var txt=vardate2.toString();
+    
+    var answer = window.confirm("Vous voulez vraiment faire la mise à jour manuellement?");
+      if (answer) localStorage.setItem(date_carte_, txt );
+      update();
+  }
+  else alert ('erreur de saisie, vérifiez et recommancer')
+}
+//document.getElementById('cryptstr2').onclick = function() { 
+//update();}
+
+</script>
+</body> 
+</html>

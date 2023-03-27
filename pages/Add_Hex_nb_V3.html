@@ -1,0 +1,60 @@
+<script type="text/javascript">  
+function fun1(){  
+var number1=BigInt("0x"+document.getElementById("input1").value);
+var number2=BigInt(document.getElementById("input2").value);  
+
+//var number1=parseInt(document.getElementById("input1").value,16);  
+//var number2=parseInt(document.getElementById("input2").value);  
+
+document.getElementById("out1").value=number1;
+document.getElementById("out10").value=(number1).toString(16);
+document.getElementById("out1_0").value=(number2).toString(16);
+document.getElementById("out2").value=number1+number2;
+document.getElementById("out4").value=(number1+number2).toString(16);
+document.getElementById("out3").value=number1-number2;
+document.getElementById("out5").value=(number1-number2).toString(16);
+
+
+}  
+</script>  
+
+
+
+<form>  
+<br> Enter N1 (Hex) and N2 (Deci) 
+<br> N1 (Hex) 
+<br><input type="text" class="form-control" id="input1" " size="120" style="font-weight: bold"> 
+<br>  N2 (Deci) 
+<br><input type="text" class="form-control" id="input2" size="120" style="font-weight: bold"> 
+<br> <input type="button" value="Cal" onclick="fun1()"/> 
+
+
+
+
+
+<br>  N1 (Deci) 
+<br><input type="text" class="form-control" id="out1" " size="120"> 
+<br>  N1 (Hex) 
+<br><input type="text" class="form-control" id="out10" " size="120"> 
+<br>  N2 (Hex) 
+<br><input type="text" class="form-control" id="out1_0" " size="120"> 
+<br>  N1+N2 (Deci) 
+<br><input type="text" class="form-control" id="out2" size="120"> 
+<br>  N1-N2 (Deci) 
+<br><input type="text" class="form-control" id="out3" size="120"> 
+<br>  N1+N2 (Hex) 
+<br><input type="text" class="form-control" id="out4" size="120" style="font-weight: bold"> 
+<br>  N1-N2 (Hex) 
+<br><input type="text" class="form-control" id="out5" size="120" style="font-weight: bold"> 
+
+</form>  
+
+
+
+
+
+
+
+
+
+
