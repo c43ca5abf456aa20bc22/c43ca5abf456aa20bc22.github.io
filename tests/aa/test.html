@@ -15,6 +15,7 @@ function onScanSuccess(decodedText, decodedResult) {
     // Handle on success condition with the decoded text or result.
    // alert(`Scan result: ${decodedText}`, decodedResult);
  document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+decodedResult;
+ document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+ '   aller  '+decodedText;
  alert(`Scan result: ${decodedText}`, decodedResult);
  alert(decodedText);
  alert( decodedResult);
