@@ -12,16 +12,15 @@ var html5QrcodeScanner = new Html5QrcodeScanner(
     "reader", { fps: 10, qrbox: 250 });
         
 function onScanSuccess(decodedText, decodedResult) {
-    // Handle on success condition with the decoded text or result.
-   // alert(`Scan result: ${decodedText}`, decodedResult);
- document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+decodedResult;
- document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+ '   aller  '+decodedText;
- //alert(`Scan result: ${decodedText}`, decodedResult);
+
+ //document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+decodedResult;
+ //document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+ '   aller  '+decodedText;
+alert('okk');
  alert(decodedText);
  alert( decodedResult);
-    // ...
-    html5QrcodeScanner.clear();
-    // ^ this will stop the scanner (video feed) and clear the scan area.
+
+ html5QrcodeScanner.clear();
+
 }
 
 html5QrcodeScanner.render(onScanSuccess);
