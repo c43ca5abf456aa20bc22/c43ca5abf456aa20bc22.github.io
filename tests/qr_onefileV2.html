@@ -27,7 +27,7 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
 
 </main>
     <br>
-<input type='button' onclick='scanner()'> 
+<input type='button' value='scanner new' onclick='scanner()'> 
 <br>
 <textarea id="textareaID" value='' rows="4" cols="50">
 </textarea>    
@@ -43,7 +43,7 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
         fps: 20, // Frames per second to attempt a scan
     });
 
-    function scanner(){
+    //function scanner(){
     scanner.render(success, error);
     // Starts scanner
 
@@ -59,7 +59,7 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
         document.getElementById("textareaID").value=document.getElementById("textareaID").value+result;
         // Prints result as a link inside result element
 
-        scanner.clear();
+        //scanner.clear();
         // Clears scanning instance
 
         //document.getElementById('reader').remove();
@@ -71,6 +71,54 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
         console.error(err);
         // Prints any errors to the console
     }
+  //}
+
+</script>
+
+
+<script>
+
+function scanner(){
+  
+    const scanner = new Html5QrcodeScanner('reader', { 
+        // Scanner will be initialized in DOM inside element with id of 'reader'
+        qrbox: {
+            width: 600,
+            height: 600,
+        },  // Sets dimensions of scanning box (set relative to reader element width)
+        fps: 20, // Frames per second to attempt a scan
+    });
+
+    
+    scanner.render(success, error);
+    // Starts scanner
+
+    function success(result) {
+
+        /*document.getElementById('result').innerHTML = `
+        <h2>Success!</h2>
+        <p><a href="${result}">${result}</a></p>
+        `;*/
+        
+        
+        
+        document.getElementById("textareaID").value=document.getElementById("textareaID").value+result;
+        // Prints result as a link inside result element
+
+       scanner.clear();
+        // Clears scanning instance
+
+    document.getElementById('reader').remove();
+        // Removes reader element from DOM since no longer needed
+    
     }
+
+    function error(err) {
+        alert(err);
+        // Prints any errors to the console
+    }
+ 
+ 
+  }
 
 </script>
