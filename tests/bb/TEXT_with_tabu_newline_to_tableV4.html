@@ -1,0 +1,152 @@
+<html>
+   <head> 
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+   </head> 
+   <body> 
+   <textarea id="areaID"  rows="5" cols="33"></textarea>
+   <br>
+   <input type='button' value ='Generate the table' onclick='ok()'>
+   <input type='button' value ='Add row' onclick='rowADD()'>
+   <input type='button' value ='Clear table' onclick='CLEAR()'>
+   <input type='button' value ='tab to text Area' onclick='COPY()'>
+   <input type='button' value ='save' onclick='save()'>
+   <input type='button' value ='read from storage' onclick='read()'>
+   <input type='button' value ='Add col' onclick='colAdd()'>
+   <br>
+   
+<div id="divID1"></div>
+
+<br>
+<div>
+<div style="width: 500px" id="reader"></div>
+<script src="html5-qrcode.min.js"></script>
+<input type='button' value='Scan' onclick='scanner_()'> <br>
+<!--textarea id="txt_area_id" rows="10" cols="50">
+ </textarea--><br>
+<input type='button' value='Clear_TextArea' onclick='Clear_txt()'>
+<input type='button' onclick="copy_text_area()" value="Copy"><br>
+</div>
+
+<script>
+ function scanner_(){
+// code source: https://blog.minhazav.dev/research/html5-qrcode
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+        
+function onScanSuccess(decodedText, decodedResult) {
+    // Handle on success condition with the decoded text or result.
+   // alert(`Scan result: ${decodedText}`, decodedResult);
+ document.getElementById("areaID").value=document.getElementById("areaID").value+decodedResult
+    // ...
+    html5QrcodeScanner.clear();
+    // ^ this will stop the scanner (video feed) and clear the scan area.
+}
+
+html5QrcodeScanner.render(onScanSuccess);
+ }
+ 
+ 
+ function Clear_txt(){
+  document.getElementById("areaID").value='';
+ }
+ function copy_text_area() {
+  const element = document.querySelector('#areaID');
+  element.select();
+  element.setSelectionRange(0, 99999);
+  document.execCommand('copy');
+}
+</script>
+<script >
+
+var Nb_cols=0;
+var Nb_rows=0;
+function ok() {
+document.getElementById("divID1").innerHTML = "";
+  var txt=document.getElementById('areaID').value;
+  rows=txt.split('\n');
+  for (var i=1; i <= rows.length; i++) {
+    row_=rows[i-1];
+    cols_=row_.split('\t');
+    Nb_cols=Math.max(cols_.length,Nb_cols);
+    if (cols_.length>1){
+    for (j =1; j<=cols_.length; j++){
+      txt_=cols_[j-1];
+		if (txt_.length>0)
+      var inp='<input type="text" id="inp' + i +'_'+j+ '" value='+txt_ +' size=10>';
+     else       
+     var inp='<input type="text" id="inp' + i +'_'+j+ '"  size=10>';
+      document.getElementById('divID1').innerHTML += inp;
+    }
+    Nb_rows++;
+    document.getElementById('divID1').innerHTML += '<br/>';
+    }
+    
+  }
+  
+}
+
+function rowADD(){
+for (j =1; j<=Nb_cols; j++){
+      txt_=cols_[j-1];
+	
+      var inp='<input type="text" id="inp' +  Nb_rows +'_'+j+ '"  size=10>';
+      
+      document.getElementById('divID1').innerHTML += inp;
+    }
+    Nb_rows++;
+document.getElementById('divID1').innerHTML += '<br/>';
+
+}
+
+
+function CLEAR(){
+document.getElementById("divID1").innerHTML = "";
+
+}
+
+function COPY(){
+var txt='';
+//var tab='';
+var elemts = document.getElementById('divID1').children;
+for (i =0 ;i<elemts.length;i++){
+
+
+if (elemts[i].type=="text"){
+txt=txt+elemts[i].value+'\t';
+
+}
+else {
+// drop the last tab
+//txt=txt.substring(0, txt.length-1));
+// add retur to new line
+txt=txt+'\n';
+}
+}
+//console.log(txt);
+txt=txt.replaceAll('\t\n','\n')
+document.getElementById('areaID').value=txt;
+}
+
+function save(){
+COPY();
+txt=document.getElementById('areaID').value;
+localStorage.setItem('Table_app_read_wright123', txt );
+}
+
+function read(){
+
+var txt = localStorage.getItem('Table_app_read_wright123');
+document.getElementById('areaID').value=txt;
+}
+
+
+function colAdd(){
+COPY();
+txt=document.getElementById('areaID').value;
+txt=txt.replaceAll('\n','\t_\n');
+document.getElementById('areaID').value=txt;
+ok();
+}
+</script>  
+   </body>
+</html>
