@@ -27,7 +27,7 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
 
 </main>
     <br>
-<textarea id="textareaID"  rows="4" cols="50">
+<textarea id="textareaID" value='' rows="4" cols="50">
 </textarea>    
 
 <script>
@@ -54,7 +54,7 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
         
         
         
-        document.getElementById("textareaID").value=result;
+        document.getElementById("textareaID").value=document.getElementById("textareaID").value+result;
         // Prints result as a link inside result element
 
         scanner.clear();
