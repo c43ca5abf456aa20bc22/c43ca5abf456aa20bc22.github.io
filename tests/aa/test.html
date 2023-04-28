@@ -3,7 +3,8 @@
 <input type='button' value='Scan' onclick='scanner_()'> <br>
 <textarea id="txt_area_id" rows="10" cols="50">
  </textarea><br>
-<input type='button' value='Clear_TextArea' onclick='Clear_txt()'> <br>
+<input type='button' value='Clear_TextArea' onclick='Clear_txt()'>
+<input type='button' onclick="copy_text_area()" value="Copy"><br>
 <script>
  function scanner_(){
 // code source: https://blog.minhazav.dev/research/html5-qrcode
@@ -26,4 +27,10 @@ html5QrcodeScanner.render(onScanSuccess);
  function Clear_txt(){
   document.getElementById("txt_area_id").value='';
  }
+ function copy_text_area() {
+  const element = document.querySelector('#txt_area_id');
+  element.select();
+  element.setSelectionRange(0, 99999);
+  document.execCommand('copy');
+}
 </script>
