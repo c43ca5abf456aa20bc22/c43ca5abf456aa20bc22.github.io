@@ -1,0 +1,44 @@
+<div style="width: 500px" id="reader"></div>
+<script src="html5-qrcode.min.js"></script>
+<input type='button' value='Scan' onclick='scanner_()'> <br>
+<textarea id="txt_area_id" rows="10" cols="50">
+ </textarea><br>
+<input type='button' value='Clear_TextArea' onclick='Clear_txt()'>
+<input type='button' onclick="copy_text_area()" value="Copy"><br>
+<script>
+ alert('okk');
+ 
+ 
+ 
+ function scanner_(){
+// code source: https://blog.minhazav.dev/research/html5-qrcode
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+        
+function onScanSuccess(decodedText, decodedResult) {
+
+ //document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+decodedResult;
+ //document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+ '   aller  '+decodedText;
+alert('okk');
+ alert(decodedText);
+ alert( decodedResult);
+
+ html5QrcodeScanner.clear();
+
+}
+
+html5QrcodeScanner.render(onScanSuccess);
+ }
+ 
+ 
+ function Clear_txt(){
+  document.getElementById("txt_area_id").value='';
+  alert('okk');
+ }
+ function copy_text_area() {
+  const element = document.querySelector('#txt_area_id');
+  element.select();
+  element.setSelectionRange(0, 99999);
+  document.execCommand('copy');
+}
+</script>
