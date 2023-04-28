@@ -59,10 +59,10 @@ var __Html5QrcodeLibrary__;(()=>{var t={449:function(t,e,r){!function(t){"use st
         document.getElementById("textareaID").value=document.getElementById("textareaID").value+result;
         // Prints result as a link inside result element
 
-        //scanner.clear();
+        scanner.clear();
         // Clears scanning instance
 
-        //document.getElementById('reader').remove();
+        document.getElementById('reader').remove();
         // Removes reader element from DOM since no longer needed
     
     }
@@ -91,14 +91,10 @@ function scanner(){
 
     
     scanner.render(success, error);
-    // Starts scanner
+    Starts scanner
 
     function success(result) {
 
-        /*document.getElementById('result').innerHTML = `
-        <h2>Success!</h2>
-        <p><a href="${result}">${result}</a></p>
-        `;*/
         
         
         
@@ -106,7 +102,7 @@ function scanner(){
         // Prints result as a link inside result element
 
        scanner.clear();
-        // Clears scanning instance
+         //Clears scanning instance
 
     document.getElementById('reader').remove();
         // Removes reader element from DOM since no longer needed
