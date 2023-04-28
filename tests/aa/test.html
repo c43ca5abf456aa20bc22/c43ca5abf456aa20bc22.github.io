@@ -1,6 +1,8 @@
 <div style="width: 500px" id="reader"></div>
 <script src="html5-qrcode.min.js"></script>
-<input type='button' value='Scan' onclick='scanner_()'>
+<input type='button' value='Scan' onclick='scanner_()'> <br>
+<textarea id="txt_area_id" rows="10" cols="50"><br>
+<input type='button' value='Clear_TextArea' onclick='Clear_txt()'> <br>
 <script>
  function scanner_(){
 // code source: https://blog.minhazav.dev/research/html5-qrcode
@@ -9,12 +11,18 @@ var html5QrcodeScanner = new Html5QrcodeScanner(
         
 function onScanSuccess(decodedText, decodedResult) {
     // Handle on success condition with the decoded text or result.
-    alert(`Scan result: ${decodedText}`, decodedResult);
+   // alert(`Scan result: ${decodedText}`, decodedResult);
+ document.getElementById("txt_area_id").value=document.getElementById("txt_area_id").value+decodedResult
     // ...
     html5QrcodeScanner.clear();
     // ^ this will stop the scanner (video feed) and clear the scan area.
 }
 
 html5QrcodeScanner.render(onScanSuccess);
+ }
+ 
+ 
+ function Clear_txt(){
+  document.getElementById("txt_area_id").value='';
  }
 </script>
