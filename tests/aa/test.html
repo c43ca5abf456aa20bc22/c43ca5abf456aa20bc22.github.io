@@ -1,7 +1,8 @@
 <div style="width: 500px" id="reader"></div>
 <script src="html5-qrcode.min.js"></script>
-
+<input type='button' value='Scan' onclick='scanner_()'>
 <script>
+ function scanner_(){
 // code source: https://blog.minhazav.dev/research/html5-qrcode
 var html5QrcodeScanner = new Html5QrcodeScanner(
     "reader", { fps: 10, qrbox: 250 });
@@ -15,5 +16,5 @@ function onScanSuccess(decodedText, decodedResult) {
 }
 
 html5QrcodeScanner.render(onScanSuccess);
-
+ }
 </script>
