@@ -1,0 +1,447 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400';
+
+html, body, div,  h2, h3, p, pre {
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+html, body {
+  background: #bdcbe5;
+  font-family: "Raleway";
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+
+.mean_h1
+ {
+  padding: 40px 0 20px;
+  font-family: "Raleway";
+  text-align: center;
+  color: #fff;  
+  
+  font-size: 40px;
+  line-height: 60px;
+}
+.ul_li_mean_h1
+ {
+ 
+  font-family: "Raleway";
+
+  color: #fff;  
+   color: #333;
+  font-size: 30px;
+  line-height: 60px;
+}
+
+
+
+
+
+
+
+
+a {
+  text-decoration: underline;
+  color: #1889e6;
+}
+a:hover {
+  text-decoration: none;
+}
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/**/
+/* main styles */
+/**/
+
+.pcss3t > input {
+  position: absolute;
+  left: -9999px;
+}
+.pcss3t > label {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  /*
+  transition: all 0.1s;
+  -o-transition: all 0.1s;  
+  -ms-transition: all 0.1s; 
+  -moz-transition: all 0.1s;  
+  -webkit-transition: all 0.1s;*/
+}
+.pcss3t > label i {
+  display: block;
+  float: left;
+  margin: 16px 8px 0 -2px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-family: FontAwesome;
+  
+ 
+  font-style: normal;
+  font-size: 17px;
+}
+.pcss3t > input:checked + label {
+  cursor: default;
+}
+.pcss3t > ul {
+  list-style: none;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 13px;
+}
+.pcss3t > ul > li {
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  padding: 30px 40px 40px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  opacity: 0;
+  /*
+   transition: all 0.1s;
+  -o-transition: all 0.5s;  
+  -ms-transition: all 0.5s; 
+  -moz-transition: all 0.5s;  
+  -webkit-transition: all 0.5s;*/
+ 
+}
+
+.pcss3t > .tab-content-first:checked ~ ul .tab-content-first,
+.pcss3t > .tab-content-2:checked ~ ul .tab-content-2,
+.pcss3t > .tab-content-3:checked ~ ul .tab-content-3,
+.pcss3t > .tab-content-4:checked ~ ul .tab-content-4,
+.pcss3t > .tab-content-5:checked ~ ul .tab-content-5,
+.pcss3t > .tab-content-6:checked ~ ul .tab-content-6,
+.pcss3t > .tab-content-7:checked ~ ul .tab-content-7,
+.pcss3t > .tab-content-8:checked ~ ul .tab-content-8,
+.pcss3t > .tab-content-9:checked ~ ul .tab-content-9,
+.pcss3t > .tab-content-last:checked ~ ul .tab-content-last {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transform: scale(1,1);
+  -webkit-transform: rotate(0deg);
+}
+
+/*----------------------------------------------------------------------------*/
+/*                                 EXTENSIONS                                 */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* auto height */
+/**/
+.pcss3t-height-auto > ul {
+  height: auto !important;
+}
+.pcss3t-height-auto > ul > li {
+  position: static;
+  display: none;
+  height: auto !important;
+}
+.pcss3t-height-auto > .tab-content-first:checked ~ ul .tab-content-first,
+.pcss3t-height-auto > .tab-content-2:checked ~ ul .tab-content-2,
+.pcss3t-height-auto > .tab-content-3:checked ~ ul .tab-content-3,
+.pcss3t-height-auto > .tab-content-4:checked ~ ul .tab-content-4,
+.pcss3t-height-auto > .tab-content-5:checked ~ ul .tab-content-5,
+.pcss3t-height-auto > .tab-content-last:checked ~ ul .tab-content-last {
+  display: block;
+}
+
+
+
+/**/
+/* steps */
+/**/
+.pcss3t-steps > label {
+  cursor: default;
+}
+
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                                   LAYOUTS                                  */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* top right */
+/**/
+.pcss3t-layout-top-right {
+  text-align: right;
+}
+
+
+/**/
+/* top center */
+/**/
+.pcss3t-layout-top-center {
+  text-align: center;
+}
+
+
+/**/
+/* top combi */
+/**/
+.pcss3t > .right {
+  float: right;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                                    ICONS                                   */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* icons positions */
+/**/
+.pcss3t-icons-top > label {
+  text-align: center;
+}
+.pcss3t-icons-top > label i {
+  float: none;
+  margin: 0 auto -10px;
+  padding-top: 17px;
+  font-size: 23px;
+  line-height: 23px;
+  text-align: center;
+}
+.pcss3t-icons-right > label i {
+  float: right;
+  margin: 0 -2px 0 8px;
+}
+.pcss3t-icons-bottom > label {
+  text-align: center;
+}
+.pcss3t-icons-bottom > label i {
+  float: none;
+  margin: -10px auto 0;
+  padding-bottom: 17px;
+  font-size: 23px;
+  line-height: 23px;
+  text-align: center;
+}
+.pcss3t-icons-only > label i {
+  float: none;
+  margin: 0 auto;
+  font-size: 23px;
+}
+
+
+/**/
+/* font awesome */
+/**/
+/*
+@font-face
+{
+  font-family: 'FontAwesome';
+
+  src: url('../fonts/fontawesome-webfont.eot?v=3.0.1');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+  url('../fonts/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+  url('../fonts/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+/*----------------------------------------------------------------------------*/
+/*                               RESPONSIVENESS                               */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* pad */
+/**/
+@media screen and (max-width: 980px) {
+  
+}
+
+
+/**/
+/* phone */
+/**/
+@media screen and (max-width: 767px) {
+  .pcss3t > label {
+    display: block;
+    Width:none;
+  }
+  .pcss3t > .right {
+    float: none;
+  }
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                                   THEMES                                   */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* default */
+/**/
+.pcss3t > label { 
+  padding: 0 20px;
+  background: #e5e5e5;
+  font-size: 13px;
+  line-height: 49px;
+  /*Width:none;*/
+  /*Width:15%;*/
+}
+.pcss3t > label:hover {
+  background: #f2f2f2;
+}
+.pcss3t > input:checked + label {
+  background: #fff;
+}
+.pcss3t > ul {
+  background: #fff;
+  text-align: left;
+}
+.pcss3t-steps > label:hover {
+  background: #e5e5e5;  
+}
+
+/**/
+/* theme 1 */
+/**/
+.pcss3t-theme-1 > label {
+  margin: 0 5px 5px 0;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 2px rgba(0,0,0,0.2);
+  color: #808080;
+  opacity: 0.8;
+}
+.pcss3t-theme-1 > label:hover {
+  background: #fff;
+  opacity: 1;
+}
+.pcss3t-theme-1 > input:checked + label {
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #2b82d9;
+  opacity: 1;
+}
+.pcss3t-theme-1 > ul {
+  border-radius: 5px;
+  box-shadow: 0 3px rgba(0,0,0,0.2);
+}
+.pcss3t-theme-1 > .tab-content-first:checked ~ ul {
+  border-top-left-radius: 0;
+}
+@media screen and (max-width: 767px) {
+  .pcss3t-theme-1 > label {
+    margin-right: 0;
+  }
+  .pcss3t-theme-1 > input:checked + label {
+    margin-bottom: 5px;
+    padding-bottom: 0;
+    border-radius: 5px;
+  }
+  .pcss3t-theme-1 > .tab-content-first:checked ~ ul {
+    border-top-left-radius: 5px;
+  }
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                               CUSTOMIZATION                                */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* height */
+/**/
+
+.pcss3t > ul,
+.pcss3t > ul > li
+ {
+  height: 100vh;/* 150px;*/
+  overflow: auto;
+}
+.grandpere{
+  height: 100vh;/* 150px;*/
+  overflow: auto;
+}
+
+
+/* My old code====================================================== */
+
+
+.div_head{
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+  margin: 12px;
+  padding: 10px;
+}
+
+.div_head  {
+  /*border: 1px solid red;*/
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  /*grid-gap: 4px;
+  padding: 4px;*/
+
+}
+.div_head.head_left{
+  
+    border: 1px solid blue;
+
+}
+.div_head.head_right{
+   border: 1px solid green; 
+  
+}
+
+
+
+.body_head_info_p,.link_head{
+  
+  color: white;
+  font-size: 16px;
+}
+.link_head{text-decoration: none;}
+/*.link_head:link {color: white;}*/
+/*.link_head:visited {color: red;}*/
+.link_head:hover {color: blue;}
+.link_head:active {color: blue;}
+
+.tabs_ul_li_label  {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+  color: #428BFF;
+  cursor: default;
+}
+
+
+
