@@ -1,0 +1,57 @@
+<div>
+  <iframe src="https://www.radio-soleil.com" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" width="367" height="227" id='frame1'>
+  </iframe>
+</div>
+
+<button onclick='aa()'> 
+  CLICK
+
+</button>
+
+<!--Add jQuery library-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+function aa(){
+console.log( document.getElementById('frame1').id)
+
+var aTags =  document.getElementById('frame1').getElementsByTagName("button");
+var searchText = "play";
+var found;
+console.log(aTags.length);
+for (var i = 0; i < aTags.length; i++) {
+console.log(aTags[i].textContent);
+  if (aTags[i].textContent == searchText) {
+  console.log('ok');
+    found = aTags[i];
+    break;
+  }
+}
+}
+  function click_butt() {
+    //let button=
+    //document.querySelector('jp-play').click();
+   //button.click();
+   
+   
+   //document.getElementById('frame1').getElementsByClassName('jp-play')[0].click();
+   
+   
+ 
+
+//var els = document.getElementsByClassName("jp-play"); 
+var els = document.getElementById('frame1').getElementsByClassName('jp-play');
+// loops els
+console.log(els.length);
+for(var i = 0, x = els.length; i < x; i++) {
+console.log(i);
+    els[i].onclick = function(){
+        // do something
+        console.log('target name should be here');
+    }
+}
+    
+  }
+
+</script>
