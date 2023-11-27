@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Audio Test</title>
+  </head>
+  <body>
+    RADIO SOLEIL
+    <br>
+    <div>
+      <audio preload="none" autoplay="autoplay" controls="controls" 
+             src="https://radiosoleil.ice.infomaniak.ch/radiosoleil-128.mp3" 
+             id='rad1' type="audio/x-mpegurl" />
+    </div>
+    <script> 
+      var sound = document.getElementById("rad1");
+      soundPlayer.play();
+      //sound.pause();
+      sound.currentTime = 0;
+    </script>
+  </body>
+</html>
