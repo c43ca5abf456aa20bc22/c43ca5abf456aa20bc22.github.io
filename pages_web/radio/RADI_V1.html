@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Radio</title>
+  </head>
+  <body onload="ON_load()">
+    <div id='div_parent'>
+
+      RADIO SOLEIL
+      <div>
+        <audio preload="none" autoplay="autoplay" controls="controls" 
+               src="https://radiosoleil.ice.infomaniak.ch/radiosoleil-128.mp3" 
+               id='rad1' type="audio/x-mpegurl" />
+      </div>
+      RCHADA FM
+      <div>
+        <audio autoplay="" controls=""> <source src="https://streamer.eagrpservices.com/audio/chadafm.mp3"/>     </audio>
+      </div>
+
+      Radio Amazigh
+      <div>
+        <iframe src="https://cdn.jwplayer.com/players/msiaVuE8-0lAFpb69.html" width="300" height="40" frameborder="0" scrolling="auto" title="Radio Amazigh-mp4a 130400 Qad=1" allowfullscreen="" style="max-width: 100%;"></iframe>
+      </div> 
+
+      Al Idaa Al Watania 
+      <div>
+        <script src="./Al Idaa Al Watania - 91.0 - Maroc - Rabat _ Radio En Direct Live_files/hls.js@latest">  </script>
+        <video id="video" controls="" autoplay="" style="background:url(img/play.gif) no-repeat; width:325px; height:50px;" src="blob:https://radioendirect.net/4ddc1ecd-0845-47c5-9ee0-d008c2a35600"></video>
+        <script>
+          if(Hls.isSupported())
+          {
+            var video = document.getElementById('video');
+            var hls = new Hls();
+            hls.loadSource('https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/radio_idaa_watanya/hls_snrt_radio/radio_idaa_watanya-avc1_100000=1.m3u8');
+            hls.attachMedia(video);
+          }
+          else if (video.canPlayType('application/vnd.apple.mpegurl'))
+          {
+            video.src = 'https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/radio_idaa_watanya/hls_snrt_radio/radio_idaa_watanya-avc1_100000=1.m3u8';
+          }
+        </script>
+      </div>
+
+      HIT RADIO
+      <div>
+        <audio autoplay="" controls=""> <source src="https://stream.radioendirect.net/409/"> </audio>
+      </div>
+      MID1
+      <div>
+        <audio autoplay="" controls=""> <source src="https://stream.radioendirect.net/410/"> </audio>
+      </div>
+      MFM radio 
+      <div>
+        <audio autoplay="" controls=""> <source src="https://streamer.eagrpservices.com/audio/mfmradio.ogg"> </audio>
+      </div> 
+
+
+    </div>
+
+
+
+  </body>
+</html>
