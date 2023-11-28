@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- VERSION 1-->
+    <!-- VERSION 3-->
     <!--Web site of the streaming radio url
   https://radioendirect.net/maroc
   https://www.radio-soleil.com
+  http://fluxradios.blogspot.com/2014/07/flux-url-radio-orient.html
   -->
     <meta charset="utf-8">
     <title>My Radio</title>
@@ -61,8 +62,15 @@
       <div>
         <audio autoplay="" controls="" id='audio_id'> <source src="https://streamer.eagrpservices.com/audio/mfmradio.ogg"> </audio>
       </div> 
-
-
+      
+      
+      <p id='label_rad'>
+        RADIO ORIENT 
+      </p>
+      <div>
+        <audio autoplay="" controls="" id='audio_id'> <source src="http://n04a-eu.rcs.revma.com/7hnrkawf4p8uv.mp3?rj-ttl=5&rj-tok=AAABjBXrOnwAfzzg_dbWRMqqsw"> </audio>
+      </div> 
+      
       <p id='label_rad'>
         RADIO SOLEIL V2
       </p>
@@ -113,12 +121,12 @@
         border-top: 1px solid black;
       }
       #audio_id{
-        width:100%;
+        width:200px;
         /*height:100px;*/
       }
       
         #audio_id::-webkit-media-controls-play-button {
-        transform: scale(2, 2);
+        transform: scale(4, 4);
       }
       #iframe_soleil {
    
