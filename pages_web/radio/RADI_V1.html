@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- VERSION 7-->
+    <!-- VERSION 8-->
     <!--Web site of the streaming radio url
   https://radioendirect.net/maroc
   https://www.radio-soleil.com
@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <title>My Radio</title>
   </head>
-  <body onload="ON_load()">
+  <body> <!-- onload="ON_load()"-->
     <!--h2>RADIO </h2-->
 
     <div class="tab">
@@ -27,46 +27,46 @@
     <div id="DIV_TAB1" class="tabcontent">
       <div class='div_parent'>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             CHADA FM
           </p>
           <img src="https://radioendirect.net/assets/images/radio/item/408.jpg" class='img_icone'>
           <div class='audio_rad'>
-            <audio autoplay="" controls="" id='audio_id' > <source src="https://streamer.eagrpservices.com/audio/chadafm.mp3"/>     </audio>
+            <audio autoplay="" controls="" class='audio_id' > <source src="https://streamer.eagrpservices.com/audio/chadafm.mp3"/>     </audio>
           </div>
         </div>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             HIT RADIO 
           </p>
           <img src="https://radioendirect.net/assets/images/radio/item/409.jpg" class='img_icone'>
           <div class='audio_rad'>
-            <audio autoplay="" controls="" id='audio_id'> <source src="https://stream.radioendirect.net/409/"> </audio>
+            <audio autoplay="" controls="" class='audio_id'> <source src="https://stream.radioendirect.net/409/"> </audio>
           </div></div>
 
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             MEDI 1
           </p>
           <img src="https://radioendirect.net/assets/images/radio/item/410.jpg" class='img_icone'>
           <div class='audio_rad'>
-            <audio autoplay="" controls="" id='audio_id'> <source src="https://stream.radioendirect.net/410/"> </audio>
+            <audio autoplay="" controls="" class='audio_id'> <source src="https://stream.radioendirect.net/410/"> </audio>
           </div></div>
 
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             MFM radio 
           </p>
           <img src="https://radioendirect.net/assets/images/radio/item/407.jpg" class='img_icone'>
           <div class='audio_rad'>
-            <audio autoplay="" controls="" id='audio_id'> <source src="https://streamer.eagrpservices.com/audio/mfmradio.ogg"> </audio>
+            <audio autoplay="" controls="" class='audio_id'> <source src="https://streamer.eagrpservices.com/audio/mfmradio.ogg"> </audio>
           </div> </div>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             Radio Amazigh
           </p>
@@ -84,7 +84,7 @@
     <div id="DIV_TAB2" class="tabcontent">
       <div class='div_parent'>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             RADIO SOLEIL
           </p>
@@ -92,10 +92,10 @@
           <div class='audio_rad'>
             <audio preload="none" autoplay="autoplay" controls="controls" 
                    src="https://radiosoleil.ice.infomaniak.ch/radiosoleil-128.mp3" 
-                   type="audio/x-mpegurl" id='audio_id'/>
+                   type="audio/x-mpegurl" class='audio_id'/>
           </div></div>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             RADIO SOLEIL V2
           </p>
@@ -109,13 +109,13 @@
 
 
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             RADIO ORIENT 
           </p>
           <img src="https://bocir-prod-bucket.s3.amazonaws.com/radios/radioorient/radiostream/UkP3XO6J7z/vignette.png" class='img_icone'>
           <div  class='audio_rad'>
-            <audio autoplay="" controls="" id='audio_id'> <source src="http://n04a-eu.rcs.revma.com/7hnrkawf4p8uv.mp3?rj-ttl=5&rj-tok=AAABjBXrOnwAfzzg_dbWRMqqsw"> </audio>
+            <audio autoplay="" controls="" class='audio_id'> <source src="http://n04a-eu.rcs.revma.com/7hnrkawf4p8uv.mp3?rj-ttl=5&rj-tok=AAABjBXrOnwAfzzg_dbWRMqqsw"> </audio>
           </div> </div>
       </div>
     </div>
@@ -124,7 +124,7 @@
     <div id="DIV_TAB3" class="tabcontent">
       <div class='div_parent'>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             Radio Sawa
           </p>
@@ -132,10 +132,10 @@
           <div class='audio_rad'>
             <audio preload="none" autoplay="autoplay" controls="controls" 
                    src="http://mbn-channel-03.akacast.akamaistream.net/7/31/233452/v1/ibb.akacast.akamaistream.net/mbn_channel_03" 
-                   type="audio/x-mpegurl" id='audio_id'/>
+                   type="audio/x-mpegurl" class='audio_id'/>
           </div></div>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             Nogoum
           </p>
@@ -143,7 +143,7 @@
           <div class='audio_rad'>
             <audio preload="none" autoplay="autoplay" controls="controls" 
                    src=" https://audio.nrpstream.com/listen/nogoumfm/radio.mp3" 
-                   type="audio/x-mpegurl" id='audio_id'/>
+                   type="audio/x-mpegurl" class='audio_id'/>
           </div></div>
 
 
@@ -154,7 +154,7 @@
     <div id="DIV_TAB4" class="tabcontent">
       <div class='div_parent'>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             LBC London
           </p>
@@ -162,10 +162,10 @@
           <div class='audio_rad'>
             <audio preload="none" autoplay="autoplay" controls="controls" 
                    src="http://media-ice.musicradio.com/LBCLondonMP3" 
-                   type="audio/x-mpegurl" id='audio_id'/>
+                   type="audio/x-mpegurl" class='audio_id'/>
           </div></div>
 
-        <div class='radio_station'>
+        <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             Jazz London
           </p>
@@ -173,7 +173,7 @@
           <div class='audio_rad'>
             <audio preload="none" autoplay="autoplay" controls="controls" 
                    src="https://radio.canstream.co.uk:8075/live.mp3" 
-                   type="audio/x-mpegurl" id='audio_id'/>
+                   type="audio/x-mpegurl" class='audio_id'/>
           </div></div>
 
 
@@ -197,10 +197,17 @@
           }*/
         }
       }, true);
+      
+      
+      function click_div_rad(elem){
+      var audios = elem.getElementsByTagName('audio');
+      audios[0].play();
+      }
+      
     </script>
     <script>
       /*for tab*/
-      function opentab(evt, cityName) {
+      function opentab(evt, tabName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
@@ -210,10 +217,16 @@
         for (i = 0; i < tablinks.length; i++) {
           tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-        document.getElementById(cityName).style.display = "block";
+        document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
       }
-      opentab(event, 'DIV_TAB1');
+      
+      
+      
+ 
+      var tab1 = document.getElementById('DIV_TAB1');
+      tab1.style.display = "block";
+      
     </script>
 
 
@@ -234,7 +247,7 @@
         font-size: 40px;
         border-top: 1px solid black;
       }
-      #audio_id{
+      .audio_id{
         width:100px;
 
         margin-left: 10px ;
@@ -244,7 +257,7 @@
         /*height:100px;*/
       }
 
-      #audio_id::-webkit-media-controls-play-button {
+      .audio_id::-webkit-media-controls-play-button {
         transform: scale(4, 4);
       }
       #iframe_soleil {
@@ -277,7 +290,7 @@
         display: inline-block;
       }
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 1000px) {
         .radio_station{
           /*background-color: red;*/
           width:100%;
@@ -287,7 +300,7 @@
 
 
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 1000px) {
         .radio_station{
           /*background-color: blue;*/
           width:49%;
