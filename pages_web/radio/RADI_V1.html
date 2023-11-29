@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- VERSION 9-->
+    <!-- VERSION 10-->
     <!--Web site of the streaming radio url
   https://radioendirect.net/maroc
   https://www.radio-soleil.com
@@ -197,13 +197,13 @@
           }*/
         }
       }, true);
-      
-      
+
+
       function click_div_rad(elem){
-      var audios = elem.getElementsByTagName('audio');
-      audios[0].play();
+        var audios = elem.getElementsByTagName('audio');
+        audios[0].play();
       }
-      
+
     </script>
     <script>
       /*for tab*/
@@ -220,13 +220,13 @@
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
       }
-      
-      
-      
- 
+
+
+
+
       var tab1 = document.getElementById('DIV_TAB1');
       tab1.style.display = "block";
-      
+
     </script>
 
 
@@ -245,20 +245,22 @@
         color: navy;
         text-indent: 40px;
         font-size: 2rem;/*40px;*/
-        border-top: 1px solid black;
+
       }
       .audio_id{
         width:8rem;/*100px;*/
-
-        margin-left: 10px ;
         margin-left: 30px ;
         margin-bottom: 10px ;
-        transform: scale(1.5, 1.5);
+        transform: scale(1.2, 1.2);
         /*height:100px;*/
       }
 
+ 
+
+
+
       .audio_id::-webkit-media-controls-play-button {
-        transform: scale(4, 4);
+        transform: scale(3, 3);
       }
       #iframe_soleil {
 
@@ -291,6 +293,12 @@
         display: inline-block;
       }
 
+      .radio_station{
+        border-radius: 25px;
+        border: 1px solid black;
+
+      }
+
       /*@media screen and (max-width: 1000px) */
       @media all and (orientation:portrait){
         .radio_station{
@@ -300,8 +308,8 @@
           display: block;
         }
       }
-      
-      
+
+
 
 
 
