@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- VERSION 8-->
+    <!-- VERSION 9-->
     <!--Web site of the streaming radio url
   https://radioendirect.net/maroc
   https://www.radio-soleil.com
@@ -244,11 +244,11 @@
       .label_rad{
         color: navy;
         text-indent: 40px;
-        font-size: 40px;
+        font-size: 2rem;/*40px;*/
         border-top: 1px solid black;
       }
       .audio_id{
-        width:100px;
+        width:8rem;/*100px;*/
 
         margin-left: 10px ;
         margin-left: 30px ;
@@ -280,7 +280,8 @@
       }
 
       .img_icone{
-        width:100px;
+        /*width:100px;*/
+        width:6rem;
         border-radius: 20px;
         margin-left: 30px ;
         margin-bottom: 10px ;
@@ -290,21 +291,29 @@
         display: inline-block;
       }
 
-      @media screen and (max-width: 1000px) {
+      /*@media screen and (max-width: 1000px) */
+      @media all and (orientation:portrait){
         .radio_station{
           /*background-color: red;*/
           width:100%;
-          display: inline-block;
+          height:10%;
+          display: block;
         }
       }
+      
+      
 
 
 
-      @media screen and (min-width: 1000px) {
+      /*@media screen and (min-width: 1000px) */
+      @media all and (orientation:landscape)
+      {
         .radio_station{
           /*background-color: blue;*/
           width:49%;
+          height:10%;
           display: inline-block;
+          vertical-align: top;
         }
       }
 
@@ -334,7 +343,7 @@
         cursor: pointer;
         padding: 14px 16px;
         transition: 0.3s;
-        font-size: 40px;
+        font-size: 2rem;/*40px;*/
         color: #0099ff;
       }
 
