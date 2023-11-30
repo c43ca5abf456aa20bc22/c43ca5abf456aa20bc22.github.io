@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- VERSION 10-->
+    <!-- VERSION 11-->
     <!--Web site of the streaming radio url
   https://radioendirect.net/maroc
   https://www.radio-soleil.com
@@ -10,6 +10,8 @@
   -->
     <meta charset="utf-8">
     <title>My Radio</title>
+    <!--pour alwatania--> 
+    <script src="./Al Idaa Al Watania - 91.0 - Maroc - Rabat _ Radio En Direct Live_files/hls.js@latest">  </script>
   </head>
   <body> <!-- onload="ON_load()"-->
     <!--h2>RADIO </h2-->
@@ -68,14 +70,49 @@
 
         <div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
-            Radio Amazigh
+            Amazigh
           </p>
           <img src="https://radioendirect.net/assets/images/radio/item/1129.jpg" class='img_icone'>
           <div class='audio_rad'>
             <iframe src="https://cdn.jwplayer.com/players/msiaVuE8-0lAFpb69.html" frameborder="0" scrolling="auto"  allowfullscreen="no" id='iframe_amazigh'></iframe>
-          </div> </div>
+          </div> 
+
+
+
+        </div>
+
+
+
+        <div class='radio_station' onclick="click_div_rad( this)">
+          <p class='label_rad'>
+            Alwatania
+          </p>
+          <img src="https://cdn.webrad.io/images/logos/radio-co-ma/watania.png" class='img_icone'>
+          <div class='audio_rad'>
+
+            <audio id="videoALWATANIA" controls="" autoplay="" 
+                   src="blob:null/c9fca72d-18c7-4b4f-b0c9-cb71ef33d64f"
+                   class='audio_id'/>
+            <script>
+              if(Hls.isSupported())
+              {
+                var video = document.getElementById('videoALWATANIA');
+                var hls = new Hls();
+                hls.loadSource('https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/radio_idaa_watanya/hls_snrt_radio/radio_idaa_watanya-avc1_100000=1.m3u8');
+                hls.attachMedia(video);
+              }
+              else if (video.canPlayType('application/vnd.apple.mpegurl'))
+              {
+                video.src = 'https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/radio_idaa_watanya/hls_snrt_radio/radio_idaa_watanya-avc1_100000=1.m3u8';
+              }
+            </script>
+          </div></div>
+
+
+
       </div>
     </div>
+
 
 
 
@@ -95,7 +132,7 @@
                    type="audio/x-mpegurl" class='audio_id'/>
           </div></div>
 
-        <div class='radio_station' onclick="click_div_rad( this)">
+        <!--div class='radio_station' onclick="click_div_rad( this)">
           <p class='label_rad'>
             RADIO SOLEIL V2
           </p>
@@ -105,7 +142,7 @@
                     height="140" width="340" scrolling='no' id='iframe_soleil'>
 
             </iframe>
-          </div></div>
+          </div></div-->
 
 
 
@@ -198,10 +235,20 @@
         }
       }, true);
 
-
+      /*
+        function click_div_rad(elem){
+          var audios = elem.getElementsByTagName('audio');
+          audios[0].play();
+        }
+        */
       function click_div_rad(elem){
         var audios = elem.getElementsByTagName('audio');
-        audios[0].play();
+        if (audios[0].paused ) {
+          audios[0].play();
+        }
+        else {
+          audios[0].pause();
+        }
       }
 
     </script>
@@ -234,15 +281,17 @@
     <style>
       /* The main style*/
       .div_parent {
-        background-color: lightblue;
+        /*background-color: lightblue;*/
+        background: url('https://i.stack.imgur.com/jGlzr.png') no-repeat 0 0 scroll;
         /*width:350px;*/
         width:100%;
+        border-radius: 25px;
         /*height:1200px;*/
         /*1560 x 720 px */
         transform-origin: center center;
       }
       .label_rad{
-        color: navy;
+        color: white;
         text-indent: 40px;
         font-size: 2rem;/*40px;*/
 
@@ -255,7 +304,7 @@
         /*height:100px;*/
       }
 
- 
+
 
 
 
